@@ -1,6 +1,6 @@
 // src/components/ServiceCard.tsx
 import React from 'react';
-import { Card, CardContent, Typography, Button, Box } from '@mui/material';
+import { Card, Typography, Button, Box } from '@mui/material';
 
 interface ServiceCardProps {
   title: string;
