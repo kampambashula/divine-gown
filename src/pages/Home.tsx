@@ -21,8 +21,8 @@ const Home: React.FC = () => {
       <HeroBanner
         title="Welcome to Divine Gown Limited"
         subtitle="Quality, trust, and elegance across Real Estate, Fashion & Lending"
-        buttonText="Explore Services"
-        buttonLink="/services"
+        buttonText="See Catalog"
+        buttonLink="/Catalog"
       />
 
       {/* Services Section */}
@@ -39,14 +39,7 @@ const Home: React.FC = () => {
           Our Services
         </Typography>
 
-        <ServiceCard
-          title="Real Estate & Apartments"
-          description="Stable rental income through prime properties."
-          link="/services/real-estate"
-          gradient="none"
-          backgroundColor={COLORS.frozenWater}
-          textColor={COLORS.evergreen2}
-        />
+        
         <ServiceCard
           title="Fashion & Divine Gowns"
           description="Elegant bridal wear and curated designer bags."
@@ -55,6 +48,16 @@ const Home: React.FC = () => {
           backgroundColor={COLORS.frozenWater}
           textColor={COLORS.evergreen2}
         />
+
+        <ServiceCard
+          title="Real Estate & Apartments"
+          description="Stable rental income through prime properties."
+          link="/services/real-estate"
+          gradient="none"
+          backgroundColor={COLORS.frozenWater}
+          textColor={COLORS.evergreen2}
+        />
+
         <ServiceCard
           title="Money Lending Services"
           description="Accessible short-term loans for individuals & SMEs."

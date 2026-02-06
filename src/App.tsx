@@ -10,6 +10,7 @@ import Fashion from './pages/Fashion';
 import Lending from './pages/Lending';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
+import Catalog from './pages/Catalog';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/Catalog" element={<Catalog/>} />
         <Route path="/services/real-estate" element={<RealEstate />} />
         <Route path="/services/fashion" element={<Fashion />} />
         <Route path="/services/lending" element={<Lending />} />

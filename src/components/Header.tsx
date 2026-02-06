@@ -38,7 +38,7 @@ const Header: React.FC = () => {
 
         {/* Navigation Buttons */}
         <Box>
-          {['Home', 'About', 'Services', 'Team', 'Contact'].map((page) => (
+          {['Home', 'About','Catalog', 'Services', 'Team', 'Contact'].map((page) => (
             <Button
               key={page}
               component={Link}
