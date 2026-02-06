@@ -35,7 +35,7 @@ type Props = {
 };
 
 // 👉 Replace with client WhatsApp number
-const WHATSAPP_NUMBER = '260XXXXXXXXX';
+const WHATSAPP_NUMBER = '260968172508';
 
 const CatalogGrid: React.FC<Props> = ({ items }) => {
   const [open, setOpen] = useState(false);
