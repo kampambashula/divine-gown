@@ -1,6 +1,6 @@
 // src/pages/Services.tsx
 import React from 'react';
-import { Container, Box, Typography, useTheme } from '@mui/material';
+import { Container, Box, useTheme } from '@mui/material';
 import HeroBanner from '../components/HeroBanner';
 import ServiceCard from '../components/ServiceCard';
 

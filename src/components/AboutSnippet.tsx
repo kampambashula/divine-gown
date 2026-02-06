@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Paper, Typography, Button } from '@mui/material';
+import { Paper, Typography, Button } from '@mui/material';
 
 type AboutSnippetProps = {
   title: string;
