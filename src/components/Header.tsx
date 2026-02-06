@@ -33,7 +33,7 @@ const Header: React.FC = () => {
             fontSize: '1.25rem',
           }}
         >
-          Divine Gown Limited
+          Divine Gown 
         </Typography>
 
         {/* Navigation Buttons */}

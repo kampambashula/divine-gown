@@ -24,7 +24,7 @@ const Home: React.FC = () => {
       
       {/* ===== Hero Banner ===== */}
       <HeroBanner
-        title="Welcome to Divine Gown Limited"
+        title="Divine Gown"
         subtitle="Quality, trust, and elegance across Real Estate, Fashion & Lending"
         buttonText="See Catalog"
         buttonLink="/catalog"
