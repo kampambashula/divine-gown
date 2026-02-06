@@ -1,8 +1,11 @@
 // src/pages/About.tsx
 import React from 'react';
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Typography, Box, useTheme } from '@mui/material';
 import HeroBanner from '../components/HeroBanner';
 import ServiceCard from '../components/ServiceCard';
+
+// Optional banner image for about page
+import bannerImage from '../assets/images/bouquets/5.jpeg';
 
 const coreValues = [
   'Integrity and trust',
@@ -12,33 +15,35 @@ const coreValues = [
   'Long-term value creation',
 ];
 
-// Theme colors
-const COLORS = {
-  evergreen: '#07281C',
-  evergreen2: '#0D3425',
-  jungleTeal: '#49836D',
-  frozenWater: '#DBF7EE',
-};
-
 const About: React.FC = () => {
+  const theme = useTheme();
+
   return (
-    <Box sx={{ backgroundColor: COLORS.frozenWater, minHeight: '100vh' }}>
+    <Box sx={{ backgroundColor: theme.palette.background.default, minHeight: '100vh' }}>
+      
+      {/* Hero Banner with background image */}
       <HeroBanner
         title="About Divine Gown Limited"
         subtitle="Quality, trust, and asset-backed growth"
+        backgroundImage={bannerImage}
       />
 
       <Container sx={{ mt: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3 }}>
         {/* Company Overview */}
-        <Typography variant="h4" gutterBottom textAlign="center" color={COLORS.evergreen}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          textAlign="center"
+          color={theme.palette.text.primary}
+        >
           Company Overview
         </Typography>
         <ServiceCard
           title="Divine Gown Limited Overview"
           description="Divine Gown Limited is a diversified Zambian private company operating in real estate, fashion, and money lending. Led by Ms. Phyllis Mwanza, the company is committed to quality, integrity, and long-term value creation."
           link="/services"
-          backgroundColor={COLORS.frozenWater}
-          textColor={COLORS.evergreen2}
+          backgroundColor={theme.palette.background.default}
+          textColor={theme.palette.text.primary}
         />
 
         {/* Vision */}
@@ -46,8 +51,8 @@ const About: React.FC = () => {
           title="Vision"
           description="To build a diversified, asset-backed company that delivers sustainable income, empowers customers, and creates long-term wealth."
           link="/services"
-          backgroundColor={COLORS.frozenWater}
-          textColor={COLORS.evergreen2}
+          backgroundColor={theme.palette.background.default}
+          textColor={theme.palette.text.primary}
         />
 
         {/* Mission */}
@@ -55,12 +60,17 @@ const About: React.FC = () => {
           title="Mission"
           description="To provide quality housing, elegant fashion, and accessible financing solutions while maintaining integrity, professionalism, and financial discipline."
           link="/services"
-          backgroundColor={COLORS.frozenWater}
-          textColor={COLORS.evergreen2}
+          backgroundColor={theme.palette.background.default}
+          textColor={theme.palette.text.secondary}
         />
 
         {/* Core Values */}
-        <Typography variant="h4" gutterBottom textAlign="center" color={COLORS.evergreen}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          textAlign="center"
+          color={theme.palette.text.primary}
+        >
           Our Core Values
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, alignItems: 'center', width: '100%' }}>
@@ -70,8 +80,8 @@ const About: React.FC = () => {
               title={value}
               description=""
               link="/services"
-              backgroundColor={COLORS.frozenWater}
-              textColor={COLORS.evergreen2}
+              backgroundColor={theme.palette.background.default}
+              textColor={theme.palette.text.secondary}
             />
           ))}
         </Box>

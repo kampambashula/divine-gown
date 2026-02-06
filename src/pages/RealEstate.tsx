@@ -1,39 +1,49 @@
 // src/pages/RealEstate.tsx
 import React from 'react';
-import { Container, Typography, Card, CardContent, Box } from '@mui/material';
+import { Container, Typography, Card, CardContent, Box, useTheme } from '@mui/material';
 import HeroBanner from '../components/HeroBanner';
 
-const COLORS = {
-  evergreen: '#07281C',
-  evergreen2: '#0D3425',
-  jungleTeal: '#49836D',
-  frozenWater: '#DBF7EE',
-};
+// Optional banner image for Real Estate page
+import bannerImage from '../assets/images/bouquets/3.jpeg';
 
 const properties = [
   {
     name: 'Libala Property',
     value: 'K1,500,000 approx.',
-    description: 'A prime residential property in Lusaka, representing the foundation of our asset-backed growth strategy.',
+    description:
+      'A prime residential property in Lusaka, representing the foundation of our asset-backed growth strategy.',
   },
   {
     name: 'Lusaka West Property',
     value: 'K800,000 approx.',
-    description: 'A modern apartment unit delivering stable rental income and long-term value creation.',
+    description:
+      'A modern apartment unit delivering stable rental income and long-term value creation.',
   },
-  // Add more properties here if needed
+  // Add more properties here
 ];
 
 const RealEstate: React.FC = () => {
+  const theme = useTheme();
+
   return (
-    <Box sx={{ backgroundColor: COLORS.frozenWater, minHeight: '100vh', pb: 6 }}>
+    <Box sx={{ backgroundColor: theme.palette.background.default, minHeight: '100vh', pb: 6 }}>
+      
+      {/* Hero Banner with background image */}
       <HeroBanner
         title="Real Estate & Apartments"
         subtitle="Stable rental income through asset-backed properties"
+        backgroundImage={bannerImage}
       />
 
       <Container sx={{ mt: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-        <Typography variant="h4" gutterBottom textAlign="center" color={COLORS.evergreen}>
+        
+        {/* Properties */}
+        <Typography
+          variant="h4"
+          gutterBottom
+          textAlign="center"
+          color={theme.palette.text.primary}
+        >
           Our Properties
         </Typography>
 
@@ -44,20 +54,18 @@ const RealEstate: React.FC = () => {
               maxWidth: 400,
               width: '100%',
               borderRadius: 2,
-              backgroundColor: COLORS.frozenWater,
-              color: COLORS.evergreen2,
+              backgroundColor: theme.palette.background.paper,
+              color: theme.palette.text.primary,
               textAlign: 'center',
               boxShadow: 3,
-              transition: 'transform 0.3s',
+              transition: 'transform 0.3s, box-shadow 0.3s',
               '&:hover': { transform: 'scale(1.03)', boxShadow: 6 },
               mt: 4,
             }}
           >
             <CardContent>
               <Typography variant="h5" gutterBottom>{property.name}</Typography>
-              <Typography variant="body1" paragraph>
-                {property.description}
-              </Typography>
+              <Typography variant="body1" paragraph>{property.description}</Typography>
               <Typography variant="subtitle1">Estimated Value: {property.value}</Typography>
             </CardContent>
           </Card>
@@ -69,11 +77,11 @@ const RealEstate: React.FC = () => {
             maxWidth: 600,
             width: '100%',
             borderRadius: 2,
-            backgroundColor: COLORS.frozenWater,
-            color: COLORS.evergreen2,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
             textAlign: 'center',
             boxShadow: 3,
-            transition: 'transform 0.3s',
+            transition: 'transform 0.3s, box-shadow 0.3s',
             '&:hover': { transform: 'scale(1.03)', boxShadow: 6 },
             mt: 6,
           }}

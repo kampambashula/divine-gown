@@ -1,40 +1,51 @@
 // src/pages/Fashion.tsx
 import React from 'react';
-import { Container, Typography, Card, CardContent, Box } from '@mui/material';
+import { Container, Typography, Card, CardContent, Box, useTheme } from '@mui/material';
 import HeroBanner from '../components/HeroBanner';
 
-const COLORS = {
-  evergreen: '#07281C',
-  evergreen2: '#0D3425',
-  jungleTeal: '#49836D',
-  frozenWater: '#DBF7EE',
-};
+// Optional banner image for Fashion page
+import bannerImage from '../assets/images/bouquets/4.jpg';
 
 const collections = [
   {
     name: 'Wedding Dresses',
-    description: 'Elegant bridal wear for your special day, designed to create timeless memories and reflect personal style. Available for sale and rental, our collection combines luxury with accessibility.',
+    description:
+      'Elegant bridal wear for your special day, designed to create timeless memories and reflect personal style. Available for sale and rental, our collection combines luxury with accessibility.',
   },
   {
     name: 'Event Wear',
-    description: 'Stylish and contemporary dresses for formal events, galas, and celebrations. We focus on quality, comfort, and elegance to make every occasion memorable.',
+    description:
+      'Stylish and contemporary dresses for formal events, galas, and celebrations. We focus on quality, comfort, and elegance to make every occasion memorable.',
   },
   {
     name: 'Second-hand Designer Bags',
-    description: 'Curated selection of pre-owned luxury handbags. Each piece is authenticated, gently used, and provides a sustainable and fashionable option for our clients.',
+    description:
+      'Curated selection of pre-owned luxury handbags. Each piece is authenticated, gently used, and provides a sustainable and fashionable option for our clients.',
   },
 ];
 
 const Fashion: React.FC = () => {
+  const theme = useTheme();
+
   return (
-    <Box sx={{ backgroundColor: COLORS.frozenWater, minHeight: '100vh', pb: 6 }}>
+    <Box sx={{ backgroundColor: theme.palette.background.default, minHeight: '100vh', pb: 6 }}>
+      
+      {/* Hero Banner with background image */}
       <HeroBanner
         title="Fashion & Divine Gowns"
         subtitle="Elegant fashion for every occasion"
+        backgroundImage={bannerImage}
       />
 
       <Container sx={{ mt: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-        <Typography variant="h4" gutterBottom textAlign="center" color={COLORS.evergreen}>
+        
+        {/* Collections */}
+        <Typography
+          variant="h4"
+          gutterBottom
+          textAlign="center"
+          color={theme.palette.text.primary}
+        >
           Our Collections
         </Typography>
 
@@ -45,8 +56,8 @@ const Fashion: React.FC = () => {
               maxWidth: 400,
               width: '100%',
               borderRadius: 2,
-              backgroundColor: COLORS.frozenWater,
-              color: COLORS.evergreen2,
+              backgroundColor: theme.palette.background.paper,
+              color: theme.palette.text.primary,
               textAlign: 'center',
               boxShadow: 3,
               transition: 'transform 0.3s',
@@ -67,8 +78,8 @@ const Fashion: React.FC = () => {
             maxWidth: 600,
             width: '100%',
             borderRadius: 2,
-            backgroundColor: COLORS.frozenWater,
-            color: COLORS.evergreen2,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
             textAlign: 'center',
             boxShadow: 3,
             transition: 'transform 0.3s',
@@ -92,8 +103,8 @@ const Fashion: React.FC = () => {
             maxWidth: 600,
             width: '100%',
             borderRadius: 2,
-            backgroundColor: COLORS.frozenWater,
-            color: COLORS.evergreen2,
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
             textAlign: 'center',
             boxShadow: 3,
             transition: 'transform 0.3s',

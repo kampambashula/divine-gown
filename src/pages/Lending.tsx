@@ -1,7 +1,10 @@
 // src/pages/Lending.tsx
 import React from 'react';
-import { Container, Typography, Card, CardContent, Box } from '@mui/material';
+import { Container, Typography, Card, CardContent, Box, useTheme } from '@mui/material';
 import HeroBanner from '../components/HeroBanner';
+
+// Optional banner image for Lending page
+import bannerImage from '../assets/images/bouquets/2.jpg';
 
 const loanFeatures = [
   'Short-term loans',
@@ -11,14 +14,25 @@ const loanFeatures = [
 ];
 
 const Lending: React.FC = () => {
+  const theme = useTheme();
+
   return (
-    <Box>
+    <Box sx={{ backgroundColor: theme.palette.background.default, minHeight: '100vh', pb: 6 }}>
+      
+      {/* Hero Banner with background image */}
       <HeroBanner
         title="Money Lending Services"
         subtitle="Accessible financing for individuals and SMEs"
+        backgroundImage={bannerImage}
       />
+
       <Container sx={{ mt: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography variant="h4" gutterBottom textAlign="center">
+        <Typography
+          variant="h4"
+          gutterBottom
+          textAlign="center"
+          color={theme.palette.text.primary}
+        >
           Loan Features
         </Typography>
 
@@ -29,11 +43,14 @@ const Lending: React.FC = () => {
               maxWidth: 345,
               width: '100%',
               borderRadius: 2,
-              background: 'linear-gradient(135deg, #0D3425, #07281C, #49836D, #DBF7EE, #07281B)',
-              color: '#DBF7EE',
+              backgroundColor: theme.palette.background.paper,
+              color: theme.palette.text.primary,
               textAlign: 'center',
-              transition: 'transform 0.3s',
-              '&:hover': { transform: 'scale(1.05)' },
+              transition: 'transform 0.3s, box-shadow 0.3s',
+              '&:hover': {
+                transform: 'scale(1.05)',
+                boxShadow: 6,
+              },
               mt: 4,
             }}
           >
